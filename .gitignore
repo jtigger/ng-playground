@@ -1,3 +1,7 @@
 # IntelliJ artifacts
 .idea
 *.iml
+
+# Built artifacts
+dist/
+node_modules/

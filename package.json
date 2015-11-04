@@ -1,0 +1,20 @@
+{
+  "name": "ng-playground",
+  "version": "0.0.1",
+  "description": "A mish-mash of techniques and patterns in Angular JS",
+  "author": "jtigger",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jtigger/ng-playground.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.4.7"
+  },
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^4.0.1",
+    "grunt-contrib-copy": "^0.8.2"
+  }
+}

@@ -8,7 +8,6 @@ Note: if you specify a `cwd`, you must set `expand: true` as well.
 * Browserify does not cause any code to be invoked; it merely concats files based on the AST resulting from looking for
  `require()` calls.
  
-
 ## module.exports
 
 you can assign a value to `exports`:
@@ -16,3 +15,8 @@ you can assign a value to `exports`:
 exports.foo = function() { return bar; };
 ```
 because `exports` is the same piece of memory that `module.exports` is.
+
+# Karma
+
+Q: Why does the order that `frameworks` are named, matter?
+   (e.g. `...jasmine, jasmine-jquery` produces a very strange error message, but `...jasmine-jquery, jasmine` works).

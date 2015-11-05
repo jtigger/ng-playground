@@ -19,16 +19,24 @@ module.exports = function(grunt) {
                 src: 'index.html',
                 dest: 'dist/'
             }
+        },
+
+        karma: {
+           unit: {
+               configFile: 'test/karma.conf.js'
+           }
         }
     });
 
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('clean', function () {
         grunt.file.delete('dist');
     });
 
     grunt.registerTask('build', ['clean', 'browserify', 'copy:index_html']);
+    grunt.registerTask('test', ['karma']);
     grunt.registerTask('default', 'build');
 };

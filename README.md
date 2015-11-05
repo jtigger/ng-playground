@@ -7,6 +7,9 @@ Sandbox for experimenting with features, organizing concepts, and various techni
  * `grunt-contrib-copy` to move static files from `src/` to `dist/`
 * Browserify for module inclusion (do it how node does)
  * [https://github.com/substack/browserify-handbook]
+* Karma to run tests
+ * Jasmine -- BDD-style specs
+ * Jasmine JQuery -- for DOM work in Jasmine specs
 
 
 # Setup

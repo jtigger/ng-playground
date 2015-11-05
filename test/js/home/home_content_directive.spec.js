@@ -14,6 +14,6 @@ describe('homeContentDirective', function () {
 
         homeContent = compile('<home-content></home-content>', scope);
 
-        expect(homeContent).toContainText('Hello, world!');
+        expect(homeContent).toContainText('Hello, world (from a template)!');
     });
 });

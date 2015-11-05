@@ -1,12 +1,12 @@
-angular.module('application')
-    .directive('homeContent', HomeContentDirective);
+'use strict';
 
 HomeContentDirective.$inject = [];
-
 function HomeContentDirective() {
     return {
         restrict: 'E',
-        template: '<div>Hello, world!</div>',
+        templateUrl: 'js/home/home_content_directive.html',
         scope: {}
     }
-};
+}
+
+module.exports = HomeContentDirective;

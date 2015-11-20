@@ -3,6 +3,5 @@
 *.iml
 
 # Built artifacts
-dist/
-gen/
+build/
 node_modules/

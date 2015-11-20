@@ -6,22 +6,26 @@ module.exports = function(grunt) {
         // https://github.com/karlgoldstein/grunt-html2js
         html2js: {
           options: {
-              base: 'src/',
+              base: 'src/app/',
               module: 'templates',
               singleModule: true,
               fileHeaderString: 'module.exports = '
           },
-          main: {
-              src: ['src/js/**/*.html'],
-              dest: 'gen/js/templates.js'
+          app: {
+              src: ['src/app/js/**/*.html'],
+              dest: 'build/gen/js/templates.js'
           }
         },
 
         // https://github.com/jmreidy/grunt-browserify#documentation
         browserify: {
             app: {
-                src: ['src/js/index.js'],
-                dest: 'dist/js/index.js'
+                src: ['src/app/js/index.js'],
+                dest: 'build/dist/js/index.js'
+            },
+            test: {
+                src: ['src/test/js/index.js'],
+                dest: 'build/test/js/index.js'
             }
         },
 
@@ -29,15 +33,15 @@ module.exports = function(grunt) {
         copy: {
             index_html: {
                 expand: true,
-                cwd: 'src/',
+                cwd: 'src/app/',
                 src: 'index.html',
-                dest: 'dist/'
+                dest: 'build/dist/'
             }
         },
 
         karma: {
            unit: {
-               configFile: 'test/karma.conf.js'
+               configFile: 'src/test/karma.conf.js'
            }
         }
     });
@@ -48,11 +52,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-html2js');
 
     grunt.registerTask('clean', function () {
-        grunt.file.delete('dist');
-        grunt.file.delete('gen');
+        grunt.file.delete('build');
     });
 
-    grunt.registerTask('build', ['clean', 'html2js', 'browserify', 'copy:index_html']);
+    grunt.registerTask('build', ['html2js', 'browserify', 'copy:index_html']);
     grunt.registerTask('test', ['build', 'karma']);
+    grunt.registerTask('rebuild', ['clean', 'build']);
     grunt.registerTask('default', 'build');
 };

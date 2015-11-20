@@ -5,7 +5,10 @@ function HomeContentDirective() {
     return {
         restrict: 'E',
         templateUrl: 'js/home/home_content_directive.html',
-        scope: {}
+        scope: {},
+        controller: function() {
+            console.log("started controller.");
+        }
     }
 }
 
